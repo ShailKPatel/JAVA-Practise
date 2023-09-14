@@ -1,0 +1,37 @@
+//Cubic equation solver
+import java.util.*;
+
+public class App {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+        int a1 = Math.abs(a);
+        int d1 = Math.abs(d);
+        boolean root = false;
+
+        for (int i = 1; i <= d1; i++) {
+            if (d % i == 0) {
+                for (int j = 1; j <= a1; j++) {
+                    if (a % j == 0) {
+                        int p = i / j;
+                        if ((a * p * p * p) + (b * p * p) + (c * p) + d == 0) {
+                            System.out.println("x = " + p);
+                            root = true;
+                        } else if ((-a * p * p * p) + (b * p * p) + (-c * p) + d == 0) {
+                            System.out.println("x = -" + p);
+                            root = true;
+                        }
+
+                    }
+                }
+            }
+        }
+        if (root == false) {
+            System.out.println("No real roots");
+        }
+
+    }
+}
