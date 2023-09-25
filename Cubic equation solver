@@ -1,5 +1,7 @@
+
 //Cubic equation solver
-import java.util.*;
+import java.util.Scanner;
+import java.lang.Math;
 
 public class App {
     public static void main(String args[]) {
@@ -17,10 +19,12 @@ public class App {
                 for (int j = 1; j <= a1; j++) {
                     if (a % j == 0) {
                         int p = i / j;
-                        if ((a * p * p * p) + (b * p * p) + (c * p) + d == 0) {
+                        if ((a * Math.pow(p, 3)) + (b * Math.pow(p, 2)) + (c * Math.pow(p, 1))
+                                + (d * Math.pow(p, 0)) == 0) {
                             System.out.println("x = " + p);
                             root = true;
-                        } else if ((-a * p * p * p) + (b * p * p) + (-c * p) + d == 0) {
+                        } else if ((a * Math.pow(-p, 3)) + (b * Math.pow(-p, 2)) + (c * Math.pow(-p, 1))
+                                + (d * Math.pow(-p, 0)) == 0) {
                             System.out.println("x = -" + p);
                             root = true;
                         }
