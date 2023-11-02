@@ -1,0 +1,22 @@
+import java.util.*;
+class Solution {
+    public boolean isPalindrome(int x) 
+    {
+        int num = x;
+        int reverse = 0;
+        boolean flag;
+
+        for(int i = num ; i > 0; i /= 10 ){
+            reverse *= 10;
+            reverse += i%10;
+        }
+
+        if(num == reverse){
+            flag = true;
+        }else{
+            flag = false;
+        }
+    
+        return flag;
+    }
+}
